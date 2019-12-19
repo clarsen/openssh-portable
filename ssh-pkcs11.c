@@ -1797,7 +1797,6 @@ out:
 	return (k);
 }
 #endif /* WITH_PKCS11_KEYGEN */
-#else /* ENABLE_PKCS11 */
 
 #include <sys/types.h>
 #include <stdarg.h>
@@ -1845,7 +1844,7 @@ lookup_key(const struct sshkey *k)
 	return (NULL);
 }
 
-#else
+#else /* ENABLE_PKCS11 */
 
 int
 pkcs11_init(int interactive)
